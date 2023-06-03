@@ -3,23 +3,25 @@ import Logo from "./Logo.astro";
 ---
 
 <header 
-    id="landing-header"
     class="fixed top-0 w-full items-center justify-center z-40"
 >
     <div class="p-4 w-full text-center text-sm bg-white">
         <p>$7,500 tax credit available for all new Model 3 and Model Y vehicles.  
             <a 
-                class="underline underline-offset-2 "
-                href="#">Learn More						
-            </a> 
-        </p>
+            class="underline underline-offset-2 "
+            href="#">Learn More						
+        </a> 
+    </p>
     </div>
-    <div class="py-2 pl-10 pr-5 flex items-center justify-between font-medium text-white">
+    <div 
+        id="landing-header"
+        class="py-2 pl-10 pr-5 flex items-center justify-between font-medium"
+    >
         <div class="flex flex-grow basis-0">
             <Logo />
         </div>
         <nav>
-            <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+            <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:transition-colors [&>li>a]:duration-500">
                 <li><a href="#">Model S</a></li>
                 <li><a href="#">Model 3</a></li>
                 <li><a href="#">Model X</a></li>
@@ -30,17 +32,53 @@ import Logo from "./Logo.astro";
             </ul>
         </nav>
         <nav>
-            <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 flex-grow basis-0 justify-end">
+            <ul class="flex text-sm flex-grow basis-0 justify-end [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2  [&>li>a]:transition-colors [&>li>a]:duration-500">
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">Account</a></li>
                 <li><a href="#">Menu</a></li>
             </ul>
         </nav>
     </div>
+
+    <div
+        id="menu-backdrop"
+        class="
+                absolute bg-black/5 backdrop-blur-lg rounded-lg 
+                translate-x-[var(--left)] translate-y-[var(--top)]
+                left-0 top-0
+                w-[var(--width)] h-[var(--height)]
+                transition-transform duration-500
+                ease-in-out opacity-0 -z-10
+            "
+    />
 </header>
 
 <script>
+    const listItem = document.querySelectorAll('#landing-header li')
+    const menuBackdrop = document.getElementById('menu-backdrop') as HTMLElement
+
+    listItem.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const { left, top, width, height } = item.getBoundingClientRect()
+           
+            menuBackdrop.style.setProperty("--left", `${left}px`)
+            menuBackdrop.style.setProperty("--top", `${top}px`)
+            menuBackdrop.style.setProperty("--width", `${width}px`)
+            menuBackdrop.style.setProperty("--height", `${height}px`)
+            menuBackdrop.style.opacity = "1"
+            menuBackdrop.style.visibility = "visible"
+        })
+        
+        item.addEventListener("mouseleave", () => {
+            menuBackdrop.style.opacity = "0"
+            menuBackdrop.style.visibility = "hidden"            
+        })
+    })
+</script>
+
+<script>
     const $header = document.getElementById('landing-header') as HTMLElement
+    console.log($header);
     const observeOptions = {
         root: null,
         rootMargin: '0px',
