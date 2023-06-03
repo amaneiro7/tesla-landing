@@ -1,15 +1,46 @@
 ---
+import Layout from "../Layouts/Layout.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ChargeSection from "../components/ChargeSection.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Tesla - El coche de tus sueños">
+	<LandingHeader />
+	
+<main class="snap-y snap-mandatory relative w-full h-screen overflow-auto">
+	<div class="snap-center">
+		<HeroSection />
+	</div>
+	<div class="snap-center">
+		<ChargeSection 
+			title="Model 3"
+			subtitle="Lease from $429/mo"
+			img="/Model-3.webp"
+		/>
+	</div>	
+	<div class="snap-center">
+		<ChargeSection 
+			title="Model S"
+			subtitle="View Inventory"
+			img="/Model-S.webp"
+		/>
+	</div>	
+	<div class="snap-center">
+		<ChargeSection 
+			title="Solar Panels"
+			subtitle="Lowest Cost Solar Panels in America"
+			img="/SolarPanels.webp"
+		/>
+	</div>	
+	<div class="snap-center">
+		<ChargeSection 
+			title="Solar Roof"
+			subtitle="Produce Clean Energy From Your Roof"
+			img="/SolarRoof.webp"
+		/>
+	</div>	
+</main>
+</Layout>
+
+

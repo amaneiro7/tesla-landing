@@ -1,0 +1,60 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<header 
+    id="landing-header"
+    class="fixed top-0 w-full items-center justify-center z-40"
+>
+    <div class="p-4 w-full text-center text-sm bg-white">
+        <p>$7,500 tax credit available for all new Model 3 and Model Y vehicles.  
+            <a 
+                class="underline underline-offset-2 "
+                href="#">Learn More						
+            </a> 
+        </p>
+    </div>
+    <div class="py-2 pl-10 pr-5 flex items-center justify-between font-medium text-white">
+        <div class="flex flex-grow basis-0">
+            <Logo />
+        </div>
+        <nav>
+            <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+                <li><a href="#">Model S</a></li>
+                <li><a href="#">Model 3</a></li>
+                <li><a href="#">Model X</a></li>
+                <li><a href="#">Model Y</a></li>
+                <li><a href="#">Solar Roof</a></li>
+                <li><a href="#">Solar Panels</a></li>
+                <li><a href="#">Powerwall</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 flex-grow basis-0 justify-end">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Menu</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const $header = document.getElementById('landing-header') as HTMLElement
+    const observeOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.9
+    }
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const { isIntersecting} = entry
+            if (isIntersecting) {
+                const color = entry.target.getAttribute('data-header-color')
+                $header.style.color = color
+            }
+        }
+    )}, observeOptions)
+    const $sections = document.querySelectorAll("[data-landing-section]")
+    $sections.forEach(section => observer.observe(section))
+</script>
