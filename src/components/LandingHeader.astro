@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro";
+import MenuNavbar from "./MenuNavbar.astro";
 ---
 
 <header 
@@ -20,7 +21,7 @@ import Logo from "./Logo.astro";
         <div class="flex flex-grow basis-0">
             <Logo />
         </div>
-        <nav>
+        <nav class="max-xl:hidden">
             <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:transition-colors [&>li>a]:duration-500">
                 <li><a href="#">Model S</a></li>
                 <li><a href="#">Model 3</a></li>
@@ -33,26 +34,19 @@ import Logo from "./Logo.astro";
         </nav>
         <nav>
             <ul class="flex text-sm flex-grow basis-0 justify-end [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2  [&>li>a]:transition-colors [&>li>a]:duration-500">
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Menu</a></li>
+                <li class="max-xl:hidden"><a href="#">Shop</a></li>
+                <li class="max-xl:hidden"><a href="#">Account</a></li>
+                <li 
+                    class="max-xl:bg-black/5 max-xl:backdrop-blur-lg max-xl:rounded-lg"
+                    data-open-modal
+                >
+                    <a href="#">Menu</a></li>
             </ul>
         </nav>
     </div>
-
-    <div
-        id="menu-backdrop"
-        class="
-                absolute bg-black/5 backdrop-blur-lg rounded-lg 
-                translate-x-[var(--left)] translate-y-[var(--top)]
-                left-0 top-0
-                w-[var(--width)] h-[var(--height)]
-                transition-transform duration-500
-                ease-in-out opacity-0 -z-10
-            "
-    />
-</header>
-
+    
+    <MenuNavbar />
+<!-- Animtaion from navbar -->
 <script>
     const listItem = document.querySelectorAll('#landing-header li')
     const menuBackdrop = document.getElementById('menu-backdrop') as HTMLElement
@@ -75,7 +69,7 @@ import Logo from "./Logo.astro";
         })
     })
 </script>
-
+<!-- Intersection Observer -->
 <script>
     const $header = document.getElementById('landing-header') as HTMLElement    
     const observeOptions = {

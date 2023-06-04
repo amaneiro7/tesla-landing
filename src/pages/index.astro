@@ -1,7 +1,6 @@
 ---
 import Layout from "../Layouts/Layout.astro";
 import LandingHeader from "../components/LandingHeader.astro";
-import ChargeSection from "../components/ChargeSection.astro";
 import LayoutSection from "../Layouts/LayoutSection.astro";
 import HeroVideo from "../Atomic/HeroVideo.astro";
 import Button from "../Atomic/Button.astro";
@@ -12,209 +11,211 @@ import Footer from "../components/Footer.astro";
 <Layout title="Tesla - El coche de tus sueños">
 	<LandingHeader />
 	
-<main class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
-	<!-- Main Section -->
-	<div class="snap-center">
-		<LayoutSection
-			title="Experience Tesla"
-			subtitle="Schedule a Demo Drive Today"
-			color="white"
-		>
-		<Button 
-			slot="button"
-			btnName="Demo Drive"
-			txtColor="white"
-			bgColor="transparent"			
-			hovertxtColor="black"
-			hoverbgColor="white"
-			borderColor="white"		
-		/>
-		<HeroVideo 
-			slot="video"
-			src="/video.webm"
-		/>
-		</LayoutSection>
-	</div>
-	<!-- inventory section -->	
-	<div class="snap-center">
-		<LayoutSection
-			title="Model 3"
-			link="Lease from $429/mo"
-			color="black"
-		>
-		<Button 
-			slot="button"
-			btnName="Order Now"
-			txtColor="black"
-			bgColor="white"			
-		/>
-		<Button 
-			slot="button"
-			btnName="Demo Drive"
-			txtColor="white"
-			bgColor="black"			
-		/>
-		<HeroImage 
-			slot="image"
-			alt="Model 3"
-			src="/Model-3.webp"
-		/>
-		</LayoutSection>
-	</div>	
-	
-	<div class="snap-center">
-		<LayoutSection
-			title="Model Y"
-			link="View Inventory"
-			color="black"
-		>
-		<Button 
-			slot="button"
-			btnName="Order Now"
-			txtColor="black"
-			bgColor="white"			
-		/>
-		<Button 
-			slot="button"
-			btnName="Demo Drive"
-			txtColor="white"
-			bgColor="black"			
-		/>
-		<HeroImage 
-			slot="image"
-			alt="Model Y"
-			src="/Model-Y.webp"
-		/>
-		</LayoutSection>
-	</div>	
-	
-	<div class="snap-center">
-		<LayoutSection
-			title="Model S"
-			link="View Inventory"
-			color="black"
-		>
-		<Button 
-			slot="button"
-			btnName="Order Now"
-			txtColor="black"
-			bgColor="white"			
-		/>
-		<Button 
-			slot="button"
-			btnName="Demo Drive"
-			txtColor="white"
-			bgColor="black"			
-		/>
-		<HeroImage 
-			slot="image"
-			alt="Model S"
-			src="/Model-S.webp"
-		/>
-		</LayoutSection>
-	</div>	
-	
-	<div class="snap-center">
-		<LayoutSection
-			title="Model X"
-			link="View Inventory"
-			color="black"
-		>
-		<Button 
-			slot="button"
-			btnName="Order Now"
-			txtColor="black"
-			bgColor="white"			
-		/>
-		<Button 
-			slot="button"
-			btnName="Demo Drive"
-			txtColor="white"
-			bgColor="black"			
-		/>
-		<HeroImage 
-			slot="image"
-			alt="Model X"
-			src="/Model-X.webp"
-		/>
-		</LayoutSection>
-	</div>	
-	<!-- Solar Energy -->
-	<div class="snap-center">
-		<LayoutSection
-			title="Solar Panels"
-			subtitle="Lowest Cost Solar Panels in America"
-			color="black"
-		>
-		<Button 
-			slot="button"
-			btnName="Order Now"
-			txtColor="black"
-			bgColor="white"			
-		/>
-		<Button 
-			slot="button"
-			btnName="Learn More"
-			txtColor="white"
-			bgColor="black"			
-		/>
-		<HeroImage 
-			slot="image"
-			alt="Solar Panels"
-			src="/SolarPanels.webp"
-		/>
-		</LayoutSection>
-	</div>		
-
-	<div class="snap-center">
-		<LayoutSection
-			title="Solar Roof"
-			subtitle="Produce Clean Energy From Your Roof"
-			color="black"
-		>
-		<Button 
-			slot="button"
-			btnName="Order Now"
-			txtColor="black"
-			bgColor="white"			
-		/>
-		<Button 
-			slot="button"
-			btnName="Learn More"
-			txtColor="white"
-			bgColor="black"			
-		/>
-		<HeroImage 
-			slot="image"
-			alt="Solar Roof"
-			src="/SolarRoof.webp"
-		/>
-		</LayoutSection>
-	</div>
-
-	<div class="snap-center">
-		<LayoutSection
-			title="Accessories"			
-			color="black"
-		>
-		<Button 
-			slot="button"
-			btnName="Shop Now"
-			txtColor="white"
-			bgColor="black"
-			opacity="1"
-		/>
-		<HeroImage 
-			slot="image"
-			alt="Accessories"
-			src="/Accessories.webp"
+	<main class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
+		<!-- Main Section -->
+		<div class="snap-center">
+			<LayoutSection
+				title="Experience Tesla"
+				subtitle="Schedule a Demo Drive Today"
+				color="white"
+			>
+			<Button 
+				slot="button"
+				btnName="Demo Drive"
+				txtColor="white"
+				bgColor="transparent"			
+				hovertxtColor="black"
+				hoverbgColor="white"
+				borderColor="white"		
 			/>
-		</LayoutSection>
-	</div>
-	<div class="snap-center">
-		<Footer />
-	</div>
-</main>
+			<HeroVideo 
+				slot="video"
+				src="/video.webm"
+			/>
+			</LayoutSection>
+		</div>
+		<!-- inventory section -->	
+		<div class="snap-center">
+			<LayoutSection
+				title="Model 3"
+				link="Lease from $429/mo"
+				color="black"
+			>
+			<Button 
+				slot="button"
+				btnName="Order Now"
+				txtColor="black"
+				bgColor="white"			
+			/>
+			<Button 
+				slot="button"
+				btnName="Demo Drive"
+				txtColor="white"
+				bgColor="black"			
+			/>
+			<HeroImage 
+				slot="image"
+				alt="Model 3"
+				src="/Model-3.webp"
+			/>
+			</LayoutSection>
+		</div>	
+		
+		<div class="snap-center">
+			<LayoutSection
+				title="Model Y"
+				link="View Inventory"
+				color="black"
+			>
+			<Button 
+				slot="button"
+				btnName="Order Now"
+				txtColor="black"
+				bgColor="white"			
+			/>
+			<Button 
+				slot="button"
+				btnName="Demo Drive"
+				txtColor="white"
+				bgColor="black"			
+			/>
+			<HeroImage 
+				slot="image"
+				alt="Model Y"
+				src="/Model-Y.webp"
+			/>
+			</LayoutSection>
+		</div>	
+		
+		<div class="snap-center">
+			<LayoutSection
+				title="Model S"
+				link="View Inventory"
+				color="black"
+			>
+			<Button 
+				slot="button"
+				btnName="Order Now"
+				txtColor="black"
+				bgColor="white"			
+			/>
+			<Button 
+				slot="button"
+				btnName="Demo Drive"
+				txtColor="white"
+				bgColor="black"			
+			/>
+			<HeroImage 
+				slot="image"
+				alt="Model S"
+				src="/Model-S.webp"
+			/>
+			</LayoutSection>
+		</div>	
+		
+		<div class="snap-center">
+			<LayoutSection
+				title="Model X"
+				link="View Inventory"
+				color="black"
+			>
+			<Button 
+				slot="button"
+				btnName="Order Now"
+				txtColor="black"
+				bgColor="white"			
+			/>
+			<Button 
+				slot="button"
+				btnName="Demo Drive"
+				txtColor="white"
+				bgColor="black"			
+			/>
+			<HeroImage 
+				slot="image"
+				alt="Model X"
+				src="/Model-X.webp"
+			/>
+			</LayoutSection>
+		</div>	
+		<!-- Solar Energy -->
+		<div class="snap-center">
+			<LayoutSection
+				title="Solar Panels"
+				subtitle="Lowest Cost Solar Panels in America"
+				color="black"
+			>
+			<Button 
+				slot="button"
+				btnName="Order Now"
+				txtColor="black"
+				bgColor="white"			
+			/>
+			<Button 
+				slot="button"
+				btnName="Learn More"
+				txtColor="white"
+				bgColor="black"			
+			/>
+			<HeroImage 
+				slot="image"
+				alt="Solar Panels"
+				src="/SolarPanels.webp"
+			/>
+			</LayoutSection>
+		</div>		
+
+		<div class="snap-center">
+			<LayoutSection
+				title="Solar Roof"
+				subtitle="Produce Clean Energy From Your Roof"
+				color="black"
+			>
+			<Button 
+				slot="button"
+				btnName="Order Now"
+				txtColor="black"
+				bgColor="white"			
+			/>
+			<Button 
+				slot="button"
+				btnName="Learn More"
+				txtColor="white"
+				bgColor="black"			
+			/>
+			<HeroImage 
+				slot="image"
+				alt="Solar Roof"
+				src="/SolarRoof.webp"
+			/>
+			</LayoutSection>
+		</div>
+
+		<div class="snap-center">
+			<LayoutSection
+				title="Accessories"			
+				color="black"
+			>
+			<Button 
+				slot="button"
+				btnName="Shop Now"
+				txtColor="white"
+				bgColor="black"
+				hoverbgColor="lightGray"
+				opacity="1"
+			/>
+			<HeroImage 
+				slot="image"
+				alt="Accessories"
+				src="/Accessories.webp"
+				/>
+			</LayoutSection>
+		</div>
+		<!-- Footer -->
+		<div class="snap-center">
+			<Footer />
+		</div>
+	</main>
 </Layout>
 
 
