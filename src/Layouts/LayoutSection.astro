@@ -6,16 +6,23 @@ export interface Props {
     color: string
 }
 const { title, subtitle, link, color } = Astro.props
-const textColor = `text-${color}`
 ---
+
+<style define:vars={{color}}>
+    [data-section-header] {
+        color: var(--color)
+    }
+</style>
 <section 
-    class={`bg-black h-screen w-screen text-center relative overflow-hidden ${textColor}`}
+    class="bg-black h-screen w-screen text-center relative overflow-hidden"
     data-header-color={color}
     data-landing-section
 >
     <div class="z-30 relative h-full flex flex-col">
-        <header>
-            <h2 class="pt-40 text-4xl md:text-[40px] font-medium">{title}</h2>
+        <header            
+            data-section-header
+        >
+            <h2 class="pt-40 mb-2 text-4xl md:text-[40px] font-medium">{title}</h2>
             <p class="text-sm">{subtitle}</p>
             <a class="text-sm underline underline-offset-4" href="#">{link}</a>            
         </header>

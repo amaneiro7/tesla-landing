@@ -7,12 +7,12 @@ import AnnounmentNavbar from "../Atomic/AnnounmentNavbar.astro";
 ---
 
 <header 
-    class="fixed top-0 w-full items-center justify-center z-40"
+    class="fixed top-0 w-full h-28 items-center justify-center z-40"
 >
     <AnnounmentNavbar />
     <div 
         id="landing-header"
-        class="py-2 pl-10 pr-5 flex items-center justify-between font-medium"
+        class="h-14 px-8 flex items-center justify-between font-medium"
     >
         <div class="flex flex-grow basis-0">
             <Logo />
@@ -23,7 +23,14 @@ import AnnounmentNavbar from "../Atomic/AnnounmentNavbar.astro";
         <SecondNavbar />
     </div>
     
+    <!-- Menu Navbar  -->
     <MenuNavbar />
+
+    <!-- Box para la animiacion de la barra -->
+    <div
+        id="menu-backdrop"
+        class="absolute bg-black/5 backdrop-blur-lg rounded-lg translate-x-[var(--left)] translate-y-[var(--top)] left-0 top-0 w-[var(--width)] h-[var(--height)] transition-transform duration-500 ease-in-out opacity-0 -z-10"/>
+</header>
 <!-- Animtaion from navbar -->
 <script>
     const listItem = document.querySelectorAll('#landing-header li')
