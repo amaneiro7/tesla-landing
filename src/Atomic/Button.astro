@@ -1,0 +1,24 @@
+---
+export interface Props {
+    btnName: string
+    txtColor: string
+    bgColor: string
+    hovertxtColor: string
+    hoverbgColor: string
+    borderColor: string
+}
+const { 
+    btnName,
+    txtColor,
+    bgColor,
+    hovertxtColor = bgColor,
+    hoverbgColor = txtColor,
+    borderColor = 'transparent',
+} = Astro.props
+---
+<a 
+    class={`border-[3px] border-${borderColor} bg-${bgColor} backdrop-blur-sm text-sm rounded font-medium px-20 py-[6px] inline-block hover:text-${hovertxtColor} hover:bg-${hoverbgColor} transition-colors`}
+    href="#"
+>
+    {btnName}
+</a>
