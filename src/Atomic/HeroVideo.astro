@@ -1,0 +1,13 @@
+---
+export interface Props {
+    src: string
+}
+const { src } = Astro.props
+---
+<video 
+    class="object-cover object-center h-full w-full"
+    autoplay
+    muted
+    loop
+    src={src}>
+</video>
