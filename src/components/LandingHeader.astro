@@ -5,7 +5,7 @@ import Logo from "./Logo.astro";
 <header 
     class="fixed top-0 w-full items-center justify-center z-40"
 >
-    <div class="p-4 w-full text-center text-sm bg-white">
+    <div class="p-4 w-full text-center text-xs md:before:text-sm bg-white shadow-sm">
         <p>$7,500 tax credit available for all new Model 3 and Model Y vehicles.  
             <a 
             class="underline underline-offset-2 "
@@ -77,8 +77,7 @@ import Logo from "./Logo.astro";
 </script>
 
 <script>
-    const $header = document.getElementById('landing-header') as HTMLElement
-    console.log($header);
+    const $header = document.getElementById('landing-header') as HTMLElement    
     const observeOptions = {
         root: null,
         rootMargin: '0px',

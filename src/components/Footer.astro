@@ -4,14 +4,14 @@ export interface Props {
 }
 const { textColor="slate-600" }= Astro.props
 ---
-<div class="bottom-0 pb-5 absolute w-full flex justify-center items-center z-50">
-    <ul class={`flex [&>li>a]:text-xs [&>li>a]:inline-block [&>li>a]:px-2 [&>li>a]:py-2 text-${textColor}`}>
+<div class="bottom-0 pb-5 w-full flex justify-center items-center text-center z-50">
+    <ul class={`flex flex-col md:flex-row [&>li>a]:text-xs [&>li>a]:inline-block [&>li>a]:px-2 [&>li>a]:py-2 text-${textColor}`}>
         <li><a href="#">Testa © 2023</a></li>
         <li><a href="#">Privacy & Legal</a></li>
         <li><a href="#">Vehicle Recalls</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="max-sm:hidden"><a href="#">Contact</a></li>
         <li><a href="#">News</a></li>
-        <li><a href="#">Get Updates</a></li>
-        <li><a href="#">Locations</a></li>
+        <li class="max-sm:hidden"><a href="#">Get Updates</a></li>
+        <li class="max-sm:hidden"><a href="#">Locations</a></li>
     </ul>
 </div>
