@@ -1,23 +1,68 @@
 ---
 import Layout from "../Layouts/Layout.astro";
 import LandingHeader from "../components/LandingHeader.astro";
-import HeroSection from "../components/HeroSection.astro";
 import ChargeSection from "../components/ChargeSection.astro";
+import LayoutSection from "../Layouts/LayoutSection.astro";
+import HeroVideo from "../Atomic/HeroVideo.astro";
+import Button from "../Atomic/Button.astro";
+import HeroImage from "../Atomic/HeroImage.astro";
 ---
 
 <Layout title="Tesla - El coche de tus sueños">
 	<LandingHeader />
 	
 <main class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
+	<!-- Main Section -->
 	<div class="snap-center">
-		<HeroSection />
-	</div>
-	<div class="snap-center">
-		<ChargeSection 
-			title="Model 3"
-			subtitle="Lease from $429/mo"
-			img="/Model-3.webp"
+		<LayoutSection
+			title="Experience Tesla"
+			subtitle="Schedule a Demo Drive Today"
+			color="white"
+		>
+		<Button 
+			slot="button"
+			btnName="Demo Drive"
+			txtColor="white"
+			bgColor="black/75"
+			hovertxtColor="black"
+			hoverbgColor="white"
+			borderColor="white"		
 		/>
+		<HeroVideo 
+			slot="video"
+			src="/video.webm"
+		/>
+		</LayoutSection>
+	</div>
+	<!-- inventory section -->	
+	<div class="snap-center">
+		<LayoutSection
+			title="Model 3"
+			link="Lease from $429/mo"
+			color="black"
+		>
+		<!-- <Button 
+			slot="button"
+			btnName="Order Now"
+			txtColor="white"
+			bgColor="black/5"
+			hovertxtColor="black"	
+			hoverbgColor="white"	
+		/> -->
+		<Button 
+			slot="button"
+			btnName="Demo Drive"
+			txtColor="black"
+			bgColor="white/5"
+			hovertxtColor="white"
+			hoverbgColor="black"
+		/>
+		<HeroImage 
+			slot="image"
+			alt="Model 3"
+			src="/Model-3.webp"
+		/>
+		</LayoutSection>
 	</div>	
 	<div class="snap-center">
 		<ChargeSection 
