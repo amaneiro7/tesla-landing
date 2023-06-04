@@ -1,0 +1,33 @@
+---
+export interface Props {
+    title:string
+    subtitle?: string
+    link?: string
+    color: string
+}
+const { title, subtitle, link, color } = Astro.props
+const textColor = `text-${color}`
+---
+<section 
+    class={`bg-black h-screen w-screen text-center relative overflow-hidden ${textColor}`}
+    data-header-color={color}
+    data-landing-section
+>
+    <div class="z-30 relative h-full flex flex-col">
+        <header>
+            <h2 class="pt-40 text-[40px] font-medium">{title}</h2>
+            <p class="text-sm">{subtitle}</p>
+            <a class="text-sm underline underline-offset-4" href="#">{link}</a>            
+        </header>
+        <footer class="flex flex-col flex-grow justify-end pb-20">
+            <div>
+                <slot name="button"/>
+                <slot name="footer" />
+            </div>
+        </footer>
+    </div>				
+    <div class="absolute top-0 bottom-0 w-full h-full z-10">
+        <slot name="video" />
+        <slot name="image" />
+    </div>
+</section>
