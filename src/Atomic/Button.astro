@@ -6,26 +6,40 @@ export interface Props {
     hovertxtColor?: string
     hoverbgColor?: string
     borderColor?: string
+    opacity?: string
 }
 const { 
     btnName,
     txtColor,
     bgColor,
-    hovertxtColor,
-    hoverbgColor,
+    hovertxtColor = bgColor,
+    hoverbgColor = txtColor,
     borderColor = 'transparent',
+    opacity = '.70',
 } = Astro.props
-
-const textColor = `text-${txtColor}`
-const backgroundColor = `bg-${bgColor}`
-const colorBorder = `border-${borderColor}`
-const hoverTextColor = `hover:text-${hovertxtColor}`
-const hoverBackgroundColor = `hover:bg-${hoverbgColor}`
-
 ---
-<a 
-    class={`border-[3px] ${colorBorder} ${backgroundColor} ${textColor} backdrop-blur-sm text-sm rounded font-medium px-20 py-[6px] inline-block ${hoverTextColor} ${hoverBackgroundColor} transition-colors`}
-    href="#"
->
-    {btnName}
-</a>
+<div class="actionBtn border-[3px] backdrop-blur-sm text-sm rounded font-medium px-20 py-[6px] inline-block transition-colors duration-300 cursor-pointer">
+    <a 
+        class="textBtn"
+        href="#"
+    >
+        {btnName}
+    </a>
+</div>
+
+<style define:vars={{txtColor, bgColor, hoverbgColor, hovertxtColor, borderColor, opacity}}>
+    .actionBtn {
+        border-color: var(--borderColor);
+        background: var(--bgColor);
+        opacity: var(--opacity);
+    }
+    .actionBtn:hover {
+        background: var(--hoverbgColor);
+    }
+    .textBtn {
+        color: var(--txtColor);
+    }
+    .actionBtn:hover .textBtn {
+        color: var(--hovertxtColor);        
+    }
+</style>
