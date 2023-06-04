@@ -1,19 +1,14 @@
 ---
 import Logo from "./Logo.astro";
 import MenuNavbar from "./MenuNavbar.astro";
+import DesktopNavbar from "../Atomic/DesktopNavbar.astro";
+import AnnounmentNavbar from "../Atomic/AnnounmentNavbar.astro";
 ---
 
 <header 
     class="fixed top-0 w-full items-center justify-center z-40"
 >
-    <div class="p-4 w-full text-center text-xs md:before:text-sm bg-white shadow-sm">
-        <p>$7,500 tax credit available for all new Model 3 and Model Y vehicles.  
-            <a 
-            class="underline underline-offset-2 "
-            href="#">Learn More						
-        </a> 
-    </p>
-    </div>
+    <AnnounmentNavbar />
     <div 
         id="landing-header"
         class="py-2 pl-10 pr-5 flex items-center justify-between font-medium"
@@ -21,17 +16,9 @@ import MenuNavbar from "./MenuNavbar.astro";
         <div class="flex flex-grow basis-0">
             <Logo />
         </div>
-        <nav class="max-xl:hidden">
-            <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:transition-colors [&>li>a]:duration-500">
-                <li><a href="#">Model S</a></li>
-                <li><a href="#">Model 3</a></li>
-                <li><a href="#">Model X</a></li>
-                <li><a href="#">Model Y</a></li>
-                <li><a href="#">Solar Roof</a></li>
-                <li><a href="#">Solar Panels</a></li>
-                <li><a href="#">Powerwall</a></li>
-            </ul>
-        </nav>
+
+        <DesktopNavbar />
+
         <nav>
             <ul class="flex text-sm flex-grow basis-0 justify-end [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2  [&>li>a]:transition-colors [&>li>a]:duration-500">
                 <li class="max-xl:hidden"><a href="#">Shop</a></li>
